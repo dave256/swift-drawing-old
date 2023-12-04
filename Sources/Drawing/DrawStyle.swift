@@ -8,6 +8,16 @@
 import SwiftUI
 
 public struct DrawStyle: Equatable {
+    
+    /// init
+    /// - Parameters:
+    ///   - style: how to draw
+    ///   - color: color to use for drawing
+    public init(style: DrawStyle.Style, color: DrawStyle.Color) {
+        self.style = style
+        self.color = color
+    }
+    
     /// how to draw the shape (line for Polyline does not close the loop, shape is outline, and filled draws it filled)
     /// automatic parser generation since enum conforms to String, CaseIterable, and Equatable
     public enum Style: String, CaseIterable, Equatable {
