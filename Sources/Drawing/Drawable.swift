@@ -22,7 +22,8 @@ extension Drawable where Self: PathDrawable {
     /// draw using path, drawStyle, and transforms with the context
     /// - Parameter context: GraphicsContext to draw with
     public func draw(context: GraphicsContext) {
-        let transform = transforms.combined.concatenating(context.transform)
+        // first apply the Drawable's transform and then the context's transform
+        // as we later set context's transform to the identity
         let tfm = transform.concatenating(context.transform)
         // transform the path otherwise the lineWidth is also scaled
         let p = path.transform(tfm).path(in: .infinite)
