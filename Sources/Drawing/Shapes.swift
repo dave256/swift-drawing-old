@@ -18,8 +18,8 @@ public struct UnitSquare: PathDrawable, Equatable {
         self.transforms = transforms
     }
 
-    public let drawStyle: DrawStyle
-    public let transforms: [Transform]
+    public var drawStyle: DrawStyle
+    public var transforms: [Transform]
     public var path: Path {
         Path { path in
             path.move(to: CGPoint(x: -0.5, y: -0.5))
@@ -43,8 +43,8 @@ public struct UnitCircle: PathDrawable, Equatable {
         self.transforms = transforms
     }
 
-    public let drawStyle: DrawStyle
-    public let transforms: [Transform]
+    public var drawStyle: DrawStyle
+    public var transforms: [Transform]
     public var path: Path {
         Path.init(ellipseIn: CGRect(x: -1.0, y: -1.0, width: 2.0, height: 2.0))
     }
