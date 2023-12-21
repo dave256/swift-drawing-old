@@ -84,6 +84,6 @@ public struct DrawStyle: Equatable {
         }
     }
 
-    var style: Style
-    var color: Color
+    public var style: Style
+    public var color: Color
 }
