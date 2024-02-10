@@ -11,13 +11,16 @@ import SwiftUI
 public struct UnitSquare: PathDrawable, Equatable {
     /// init
     /// - Parameters:
+    ///   - name: optional name/comment for the shape
     ///   - drawStyle: how to draw the shape
     ///   - transforms: transforms to apply to the shape in the order they are in the array
-    public init(drawStyle: DrawStyle, transforms: [Transform]) {
+    public init(name: String = "", drawStyle: DrawStyle, transforms: [Transform]) {
+        self.name = name
         self.drawStyle = drawStyle
         self.transforms = transforms
     }
 
+    public var name: String
     public var drawStyle: DrawStyle
     public var transforms: [Transform]
     public var path: Path {
@@ -36,13 +39,16 @@ public struct UnitSquare: PathDrawable, Equatable {
 public struct UnitCircle: PathDrawable, Equatable {
     /// init
     /// - Parameters:
+    ///   - name: optional name/comment for the shape
     ///   - drawStyle: how to draw the shape
     ///   - transforms: transforms to apply to the shape in the order they are in the array
-    public init(drawStyle: DrawStyle, transforms: [Transform]) {
+    public init(name: String = "", drawStyle: DrawStyle, transforms: [Transform]) {
+        self.name = ""
         self.drawStyle = drawStyle
         self.transforms = transforms
     }
 
+    public var name: String
     public var drawStyle: DrawStyle
     public var transforms: [Transform]
     public var path: Path {
