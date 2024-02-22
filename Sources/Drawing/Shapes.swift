@@ -15,7 +15,7 @@ public struct UnitSquare: PathDrawable, Equatable {
     ///   - drawStyle: how to draw the shape
     ///   - transforms: transforms to apply to the shape in the order they are in the array
     public init(name: String = "", drawStyle: DrawStyle, transforms: [Transform]) {
-        self.name = name
+        self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
         self.drawStyle = drawStyle
         self.transforms = transforms
     }
@@ -43,7 +43,7 @@ public struct UnitCircle: PathDrawable, Equatable {
     ///   - drawStyle: how to draw the shape
     ///   - transforms: transforms to apply to the shape in the order they are in the array
     public init(name: String = "", drawStyle: DrawStyle, transforms: [Transform]) {
-        self.name = name
+        self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
         self.drawStyle = drawStyle
         self.transforms = transforms
     }
